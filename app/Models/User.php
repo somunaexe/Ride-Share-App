@@ -32,6 +32,15 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function getDriver()
+    {
+        return $this->hasOne(Driver::class);
+    }
+
+    public function getTrips()
+    {
+        return $this->hasMany(Trip::class);
+    }
     /**
      * Get the attributes that should be cast.
      *
